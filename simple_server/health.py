@@ -4,6 +4,6 @@ from flask.views import MethodView
 from werkzeug.exceptions import abort
 
 
-class StatsAPI(MethodView):
+class StatusAPI(MethodView):
     def get(self):
-        return ('healthy', 400)
+        return ('healthy', 200)

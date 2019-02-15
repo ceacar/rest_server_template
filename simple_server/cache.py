@@ -20,7 +20,7 @@ class Cacher:
             raise Exception("attmpting to delet non exist key")
 
     def get(self, key: str) -> T:
-        return self.internal_cache.get(timestamp, None)
+        return self.internal_cache.get(key, None)
 
 __cacher = None
 

@@ -1,23 +1,27 @@
 import sys
 from typing import TypeVar
+import errors
 
 T = TypeVar('T')
 
 class Cacher:
+    """
+    use a cacher to cache key value pair store
+    """
 
     def __init__(self):
         self.internal_cache = {}
 
-    def save(self, key: str, value: T,
-             ):
+    def save(self, key: str, value: T):
         self.internal_cache[key] = value
+        print(self.internal_cache)
 
     def delete(self, key: str):
         retrieved_value = self.internal_cache.get(key, None)
         if retrieved_value:
-            del self.internal_cache[retrieved_value]
+            del self.internal_cache[key]
         else:
-            raise Exception("attmpting to delet non exist key")
+            raise errors.InvalidKey("attmpting to delete non exist value with key {0}".format(key))
 
     def get(self, key: str) -> T:
         return self.internal_cache.get(key, None)

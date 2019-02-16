@@ -1,3 +1,5 @@
 source ./venv_py3/bin/activate
-export PS1="ss $PS1"
-export PYTHONPATH=$PWD:$PWD/simple_server:$PYTHONPATH
+export PS1="scrap_cacher $PS1"
+export PYTHONPATH=$PWD:$PWD/scrap_cacher:$PYTHONPATH
+export PORT=35555
+export SERVER_IP="localhost"

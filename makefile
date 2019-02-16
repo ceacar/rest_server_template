@@ -1,6 +1,6 @@
 SHELL := /bin/bash
 tester_version = 1.0.0
-project_name = scrap_cacher
+project_name = blazing_potato
 service_port = 35555
 server_ip = localhost
 

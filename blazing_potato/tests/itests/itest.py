@@ -2,14 +2,16 @@ import json
 import os
 import tempfile
 import pytest
-import scrap_cacher
+import blazing_potato
 
 port = os.environ.get("PORT", 8000)
 
+flask_app = blazing_potato
+
 @pytest.fixture
 def client():
-    scrap_cacher.app.config['TESTING'] = True
-    client = scrap_cacher.app.test_client()
+    flask_app.app.config['TESTING'] = True
+    client = flask_app.app.test_client()
     yield client
 
 def test_check_health(client):

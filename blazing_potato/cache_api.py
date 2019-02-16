@@ -1,7 +1,7 @@
 from flask import request, jsonify
 from flask.views import MethodView
 from werkzeug.exceptions import abort
-from scrap_cacher import cache
+import cache
 from errors import *
 import json
 

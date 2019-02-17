@@ -23,6 +23,10 @@ itest:
 
 locust:
 	(source setenv;\
-	cd scrap_cacher/tests/loadtests;\
+	cd $(project_name)/tests/loadtests;\
 	locust --host=$(service_ip):$(service_port))
 
+benchmark:
+	(source setenv;\
+	./example_cmd_for_sanity_test.py;\
+	ab -c 500 -n 5000 -s 90 localhost:35555/get/b7d1c31f1654ddf1043260b571e9d8ba)

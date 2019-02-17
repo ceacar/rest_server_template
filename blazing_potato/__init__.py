@@ -19,4 +19,4 @@ app = create_app()
 
 @app.route("/")
 def root():
-    return "Url Scrap Cacher is up and running!"
+    return ("Blazing Potato is up and running!",200)

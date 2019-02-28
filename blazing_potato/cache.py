@@ -14,7 +14,6 @@ class Cacher:
 
     def save(self, key: str, value: T):
         self.internal_cache[key] = value
-        print(self.internal_cache)
 
     def delete(self, key: str):
         retrieved_value = self.internal_cache.get(key, None)

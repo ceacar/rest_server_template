@@ -24,14 +24,12 @@ def test_post_key_value(client):
     res = client.post('/save',
                       json = {"key" : "key1", "value" : "value1"},
                       follow_redirects = True)
-    print(res.data, res)
     assert res.status_code == 200
     assert json.loads(res.data.decode()) == {"errors":"", "result" : "saved"}
 
 def test_get_value(client):
     #test normal get operation
     res = client.get('/get/key1')
-    print(res.data, res)
     assert res.status_code == 200
     assert json.loads(res.data.decode()) == {"errors":"", "result" : "value1"}
     res = client.get('/get/key11')
@@ -41,6 +39,5 @@ def test_get_value(client):
 def test_check_health(client):
     #test normal get operation
     res = client.get('/health')
-    print(res.data, res)
     assert res.status_code == 200
     assert json.loads(res.data.decode()) == {"errors":"", "result" : "healthy"}

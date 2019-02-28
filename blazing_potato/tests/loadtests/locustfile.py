@@ -19,10 +19,6 @@ def get_value(l):
     new_key = rand_str()
     l.client.get("/get/{0}".format(new_key))
 
-def get_one(l):
-    new_key = "key1"
-    l.client.get("/get/{0}".format(new_key))
-
 def index(l):
     l.client.get("/")
 
@@ -31,8 +27,7 @@ def health(l):
 
 
 class UserBehavior(TaskSet):
-    #tasks = {index: 1, health: 1, save: 1, get_value: 10}
-    tasks = {get_one: 1}
+    tasks = {index: 1, health: 1, save: 1, get_value: 10}
 
     def on_start(self):
         save_one(self)

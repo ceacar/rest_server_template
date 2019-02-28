@@ -24,7 +24,6 @@ class CacheAPI(MethodView):
         try:
             key = req_data.get("key", "")
             value = req_data.get("value", "")
-            print("value is",value,type(value))
             if not key:
                 return (self.format_result("key empty", ""),400)
             if not value:
